@@ -1,15 +1,24 @@
-variable "region" {
-  description = "AWS region"
-  default     = "us-west-1"
+variable "prefix" {
+  description = "The prefix used for all resources in this example"
+  type        = string
+  # We created this default prefix with letters extracted from [T]erra[f]orm and [Az]ure
+  default     = "tfaz"
 }
 
-variable "instance_type" {
-  description = "Type of EC2 instance to provision"
-  default     = "t2.micro"
+variable "location" {
+  description = "The Azure region in which the resources in this example should exist"
+  type        = string
+  default     = "westeurope"
 }
 
-variable "instance_name" {
-  description = "EC2 instance name"
-  default     = "Provisioned by Terraform"
+variable "vm_name" {
+  description = "The Azure virtual machine name"
+  type        = string
+  default     = ""
 }
 
+variable "vm_size" {
+  description = "The Azure virtual machine size"
+  type        = string
+  default     = "Standard_D2_v3"
+}
